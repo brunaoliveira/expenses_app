@@ -15,7 +15,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't1',
       title: 'Running shoes',
-      value: 310.99,
+      value: 310.90,
       date: DateTime.now(),
     ),
     Transaction(
@@ -31,7 +31,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Personal Expenses'),
-        backgroundColor: Colors.teal[300],
+        backgroundColor: Colors.purple[500],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -41,14 +41,56 @@ class MyHomePage extends StatelessWidget {
             width: double.infinity,
             child: Card(
               child: Text('Graph'),
-              color: Colors.teal[100],
+              color: Colors.purple[50],
               elevation: 5,
             ),
           ),
           Column(
             children: _transactions.map((transaction) {
               return Card(
-                child: Text(transaction.title),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.purple,
+                          width: 2,
+                        ),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        'R\$ ${transaction.value.toStringAsFixed(2)}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.purple,
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          transaction.title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          transaction.date.toString(),
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(0.6),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               );
             }).toList(),
           ),
