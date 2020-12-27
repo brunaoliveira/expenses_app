@@ -26,6 +26,7 @@ class TransactionForm extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: 'Value (R\$)',
               ),
+              keyboardType: TextInputType.number,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
