@@ -9,7 +9,17 @@ main() => runApp(ExpensesApp());
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return MaterialApp(
+      home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.amber,
+          foregroundColor: Colors.white,
+        ),
+        // accentColor: Colors.amber,
+      ),
+    );
   }
 }
 
@@ -63,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Personal Expenses'),
-        backgroundColor: Colors.purple[500],
+        // backgroundColor: Colors.purple[500],
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -79,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: double.infinity,
               child: Card(
                 child: Text('Graph'),
-                color: Colors.purple[50],
+                // color: Colors.purple[50],
                 elevation: 5,
               ),
             ),
@@ -89,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        backgroundColor: Colors.purple,
+        // backgroundColor: ThemeData.floatingActionButtonTheme,
         onPressed: () => _openTransactionFormModal(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
