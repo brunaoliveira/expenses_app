@@ -51,48 +51,48 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [
-    Transaction(
-      id: 't0',
-      title: 'Lunch',
-      value: 67.80,
-      date: DateTime.now().subtract(Duration(days: 4)),
-    ),
-    Transaction(
-      id: 't1',
-      title: 'Running shoes',
-      value: 310.90,
-      date: DateTime.now().subtract(Duration(days: 1)),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Power bill',
-      value: 121.35,
-      date: DateTime.now().subtract(Duration(days: 3)),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'Make up',
-      value: 324.90,
-      date: DateTime.now().subtract(Duration(days: 2)),
-    ),
-    Transaction(
-      id: 't4',
-      title: 'Books',
-      value: 235.98,
-      date: DateTime.now().subtract(Duration(days: 6)),
-    ),
-    Transaction(
-      id: 't5',
-      title: 'Ice cream',
-      value: 35.17,
-      date: DateTime.now().subtract(Duration(days: 7)),
-    ),
-    Transaction(
-      id: 't6',
-      title: 'Books',
-      value: 80.00,
-      date: DateTime.now().subtract(Duration(days: 0)),
-    ),
+    // Transaction(
+    //   id: 't0',
+    //   title: 'Lunch',
+    //   value: 67.80,
+    //   date: DateTime.now().subtract(Duration(days: 4)),
+    // ),
+    // Transaction(
+    //   id: 't1',
+    //   title: 'Running shoes',
+    //   value: 310.90,
+    //   date: DateTime.now().subtract(Duration(days: 1)),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Power bill',
+    //   value: 121.35,
+    //   date: DateTime.now().subtract(Duration(days: 3)),
+    // ),
+    // Transaction(
+    //   id: 't3',
+    //   title: 'Make up',
+    //   value: 324.90,
+    //   date: DateTime.now().subtract(Duration(days: 2)),
+    // ),
+    // Transaction(
+    //   id: 't4',
+    //   title: 'Books',
+    //   value: 235.98,
+    //   date: DateTime.now().subtract(Duration(days: 6)),
+    // ),
+    // Transaction(
+    //   id: 't5',
+    //   title: 'Ice cream',
+    //   value: 35.17,
+    //   date: DateTime.now().subtract(Duration(days: 7)),
+    // ),
+    // Transaction(
+    //   id: 't6',
+    //   title: 'Books',
+    //   value: 80.00,
+    //   date: DateTime.now().subtract(Duration(days: 0)),
+    // ),
   ];
 
   List<Transaction> get _recentTransactions {
@@ -111,12 +111,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  _addTransaction(String title, double value) {
+  _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
       id: Random().nextDouble().toString(),
       title: title,
       value: value,
-      date: DateTime.now(),
+      date: date,
     );
 
     setState(() {
