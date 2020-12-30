@@ -14,10 +14,15 @@ class ExpensesApp extends StatelessWidget {
       home: MyHomePage(),
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
                 fontFamily: 'OpenSans',
                 fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              button: TextStyle(
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -25,7 +30,6 @@ class ExpensesApp extends StatelessWidget {
           backgroundColor: Colors.amber,
           foregroundColor: Colors.white,
         ),
-        fontFamily: 'Quicksand',
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 headline6: TextStyle(
@@ -86,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't6',
       title: 'Books',
-      value: 800.00,
+      value: 80.00,
       date: DateTime.now().subtract(Duration(days: 0)),
     ),
   ];
