@@ -35,19 +35,16 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      // margin: EdgeInsets.all(20),
       margin: EdgeInsets.all(20),
-      child: Flexible(
-        child: Row(
-          children: groupedTransactions.map((transaction) {
-            return ChartBar(
-              label: transaction['day'],
-              value: transaction['value'],
-              percentage: 0.0,
-            );
-            // return Text('${transaction['day']}: ${transaction['value']}');
-          }).toList(),
-        ),
+      child: Row(
+        children: groupedTransactions.map((transaction) {
+          return ChartBar(
+            label: transaction['day'],
+            value: transaction['value'],
+            percentage: 0.3,
+          );
+          // return Text('${transaction['day']}: ${transaction['value']}');
+        }).toList(),
       ),
     );
   }
