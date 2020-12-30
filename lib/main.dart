@@ -25,7 +25,6 @@ class ExpensesApp extends StatelessWidget {
           backgroundColor: Colors.amber,
           foregroundColor: Colors.white,
         ),
-        // accentColor: Colors.amber,
         fontFamily: 'Quicksand',
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
@@ -122,7 +121,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        // backgroundColor: ThemeData.floatingActionButtonTheme,
         onPressed: () => _openTransactionFormModal(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

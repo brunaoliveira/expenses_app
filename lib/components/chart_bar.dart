@@ -17,6 +17,10 @@ class ChartBar extends StatelessWidget {
           height: 60,
           width: 10,
           child: null,
+          decoration: BoxDecoration(
+            color: Theme.of(context).accentColor,
+            borderRadius: BorderRadius.all(Radius.circular(30.0)),
+          ),
         ),
         SizedBox(height: 5),
         Text(label),

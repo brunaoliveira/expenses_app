@@ -26,7 +26,6 @@ class Chart extends StatelessWidget {
       return {
         // vai pegar a primeira letra do dia da semana
         'day': DateFormat.E().format(weekDay)[0],
-        // 'day': 'T',
         'value': totalSum,
       };
     });
@@ -37,7 +36,7 @@ class Chart extends StatelessWidget {
     return Card(
       elevation: 6,
       // margin: EdgeInsets.all(20),
-      margin: EdgeInsets.fromLTRB(5, 20, 5, 20),
+      margin: EdgeInsets.all(20),
       child: Flexible(
         child: Row(
           children: groupedTransactions.map((transaction) {
