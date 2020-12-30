@@ -50,50 +50,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> _transactions = [
-    // Transaction(
-    //   id: 't0',
-    //   title: 'Lunch',
-    //   value: 67.80,
-    //   date: DateTime.now().subtract(Duration(days: 4)),
-    // ),
-    // Transaction(
-    //   id: 't1',
-    //   title: 'Running shoes',
-    //   value: 310.90,
-    //   date: DateTime.now().subtract(Duration(days: 1)),
-    // ),
-    // Transaction(
-    //   id: 't2',
-    //   title: 'Power bill',
-    //   value: 121.35,
-    //   date: DateTime.now().subtract(Duration(days: 3)),
-    // ),
-    // Transaction(
-    //   id: 't3',
-    //   title: 'Make up',
-    //   value: 324.90,
-    //   date: DateTime.now().subtract(Duration(days: 2)),
-    // ),
-    // Transaction(
-    //   id: 't4',
-    //   title: 'Books',
-    //   value: 235.98,
-    //   date: DateTime.now().subtract(Duration(days: 6)),
-    // ),
-    // Transaction(
-    //   id: 't5',
-    //   title: 'Ice cream',
-    //   value: 35.17,
-    //   date: DateTime.now().subtract(Duration(days: 7)),
-    // ),
-    // Transaction(
-    //   id: 't6',
-    //   title: 'Books',
-    //   value: 80.00,
-    //   date: DateTime.now().subtract(Duration(days: 0)),
-    // ),
-  ];
+  final List<Transaction> _transactions = [];
 
   List<Transaction> get _recentTransactions {
     return _transactions.where((transaction) {
@@ -126,6 +83,12 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).pop();
   }
 
+  _removeTransaction(String id) {
+    setState(() {
+      _transactions.removeWhere((transaction) => transaction.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Chart(_recentTransactions),
-            TransactionList(_transactions),
+            TransactionList(_transactions, _removeTransaction),
           ],
         ),
       ),
