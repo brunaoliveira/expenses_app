@@ -15,6 +15,7 @@ class ExpensesApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         fontFamily: 'Quicksand',
+        highlightColor: Colors.red,
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
                 fontFamily: 'OpenSans',
@@ -27,7 +28,7 @@ class ExpensesApp extends StatelessWidget {
               ),
             ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.amber,
+          backgroundColor: Colors.purple[400],
           foregroundColor: Colors.white,
         ),
         appBarTheme: AppBarTheme(
@@ -39,6 +40,7 @@ class ExpensesApp extends StatelessWidget {
                 ),
               ),
         ),
+        accentColor: Colors.yellow,
       ),
     );
   }
