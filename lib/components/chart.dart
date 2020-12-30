@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:expenses/models/transaction.dart';
+import 'package:expenses/components/chart_bar.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransactions;
@@ -26,7 +27,7 @@ class Chart extends StatelessWidget {
         // vai pegar a primeira letra do dia da semana
         'day': DateFormat.E().format(weekDay)[0],
         // 'day': 'T',
-        'value': 9.99,
+        'value': totalSum,
       };
     });
   }
@@ -35,9 +36,19 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      margin: EdgeInsets.all(20),
-      child: Row(
-        children: <Widget>[],
+      // margin: EdgeInsets.all(20),
+      margin: EdgeInsets.fromLTRB(5, 20, 5, 20),
+      child: Flexible(
+        child: Row(
+          children: groupedTransactions.map((transaction) {
+            return ChartBar(
+              label: transaction['day'],
+              value: transaction['value'],
+              percentage: 0.0,
+            );
+            // return Text('${transaction['day']}: ${transaction['value']}');
+          }).toList(),
+        ),
       ),
     );
   }
