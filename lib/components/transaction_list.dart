@@ -18,9 +18,12 @@ class TransactionList extends StatelessWidget {
                   SizedBox(
                       height:
                           constraints.maxHeight * 0.05), // add some distance
-                  Text(
-                    'No transactions to show',
-                    style: Theme.of(context).textTheme.headline6,
+                  Container(
+                    height: constraints.maxHeight * 0.28,
+                    child: Text(
+                      'No transactions to show',
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
                   ),
                   SizedBox(
                       height:
