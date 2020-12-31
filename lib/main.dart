@@ -143,13 +143,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-            _showChart
-                ? Container(
-                    height: availableHeight * 0.35,
-                    child: Chart(_recentTransactions))
-                : Container(
-                    height: availableHeight * 0.65,
-                    child: TransactionList(_transactions, _removeTransaction)),
+            if (_showChart || !isLandscape)
+              Container(
+                height: availableHeight * 0.3,
+                child: Chart(_recentTransactions),
+              ),
+            if (!_showChart || !isLandscape)
+              Container(
+                height: availableHeight * 0.7,
+                child: TransactionList(_transactions, _removeTransaction),
+              ),
           ],
         ),
       ),

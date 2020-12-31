@@ -17,9 +17,9 @@ class TransactionList extends StatelessWidget {
                 children: <Widget>[
                   SizedBox(
                       height:
-                          constraints.maxHeight * 0.05), // add some distance
+                          constraints.maxHeight * 0.03), // add some distance
                   Container(
-                    height: constraints.maxHeight * 0.28,
+                    height: constraints.maxHeight * 0.18,
                     child: Text(
                       'No transactions to show',
                       style: Theme.of(context).textTheme.headline6,
@@ -27,7 +27,7 @@ class TransactionList extends StatelessWidget {
                   ),
                   SizedBox(
                       height:
-                          constraints.maxHeight * 0.05), // add some distance
+                          constraints.maxHeight * 0.03), // add some distance
                   Container(
                     height: constraints.maxHeight * 0.6,
                     child: Image.asset(
