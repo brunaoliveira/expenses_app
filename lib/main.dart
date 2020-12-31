@@ -12,36 +12,71 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHomePage(),
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        fontFamily: 'Quicksand',
-        highlightColor: Colors.red,
-        textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: TextStyle(
-                fontFamily: 'OpenSans',
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              button: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.purple[400],
-          foregroundColor: Colors.white,
-        ),
-        appBarTheme: AppBarTheme(
-          textTheme: ThemeData.light().textTheme.copyWith(
-                headline6: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+      builder: (context, child) {
+        return Theme(
+          child: child,
+          data: ThemeData(
+            primarySwatch: Colors.purple,
+            fontFamily: 'Quicksand',
+            highlightColor: Colors.red,
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  button: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-        ),
-        accentColor: Colors.yellow,
-      ),
+            floatingActionButtonTheme: FloatingActionButtonThemeData(
+              backgroundColor: Colors.purple[400],
+              foregroundColor: Colors.white,
+            ),
+            appBarTheme: AppBarTheme(
+              textTheme: ThemeData.light().textTheme.copyWith(
+                    headline6: TextStyle(
+                      fontFamily: 'OpenSans',
+                      fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+            ),
+            accentColor: Colors.yellow,
+          ),
+        );
+      },
+      // theme: ThemeData(
+      //   primarySwatch: Colors.purple,
+      //   fontFamily: 'Quicksand',
+      //   highlightColor: Colors.red,
+      //   textTheme: ThemeData.light().textTheme.copyWith(
+      //         headline6: TextStyle(
+      //           fontFamily: 'OpenSans',
+      //           fontSize: 20,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //         button: TextStyle(
+      //           color: Colors.white,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //   floatingActionButtonTheme: FloatingActionButtonThemeData(
+      //     backgroundColor: Colors.purple[400],
+      //     foregroundColor: Colors.white,
+      //   ),
+      //   appBarTheme: AppBarTheme(
+      //     textTheme: ThemeData.light().textTheme.copyWith(
+      //           headline6: TextStyle(
+      //             fontFamily: 'OpenSans',
+      //             fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+      //             fontWeight: FontWeight.bold,
+      //           ),
+      //         ),
+      //   ),
+      //   accentColor: Colors.yellow,
+      // ),
     );
   }
 }
@@ -137,7 +172,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text('Personal Expenses'),
+      title: Text(
+        'Personal Expenses',
+      ),
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.add),
