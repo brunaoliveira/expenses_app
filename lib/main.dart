@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:math';
 import 'package:expenses/components/transaction_form.dart';
 import 'package:expenses/models/transaction.dart';
@@ -10,6 +11,10 @@ main() => runApp(ExpensesApp());
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+
     return MaterialApp(
       home: MyHomePage(),
       builder: (context, child) {
@@ -120,10 +125,10 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-                height: availableHeight * 0.3,
+                height: availableHeight * 0.35,
                 child: Chart(_recentTransactions)),
             Container(
-                height: availableHeight * 0.7,
+                height: availableHeight * 0.65,
                 child: TransactionList(_transactions, _removeTransaction)),
           ],
         ),

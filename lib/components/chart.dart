@@ -5,6 +5,7 @@ import 'package:expenses/components/chart_bar.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransactions;
+
   Chart(this.recentTransactions);
 
   List<Map<String, Object>> get groupedTransactions {
@@ -14,6 +15,7 @@ class Chart extends StatelessWidget {
       );
 
       double totalSum = 0.0;
+
       for (var i = 0; i < recentTransactions.length; i++) {
         bool isSameDay = recentTransactions[i].date.day == weekDay.day;
         bool isSameMonth = recentTransactions[i].date.month == weekDay.month;
@@ -43,7 +45,7 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: EdgeInsets.fromLTRB(5, 20, 5, 20),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: groupedTransactions.map((transaction) {
