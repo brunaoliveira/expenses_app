@@ -47,36 +47,6 @@ class ExpensesApp extends StatelessWidget {
           ),
         );
       },
-      // theme: ThemeData(
-      //   primarySwatch: Colors.purple,
-      //   fontFamily: 'Quicksand',
-      //   highlightColor: Colors.red,
-      //   textTheme: ThemeData.light().textTheme.copyWith(
-      //         headline6: TextStyle(
-      //           fontFamily: 'OpenSans',
-      //           fontSize: 20,
-      //           fontWeight: FontWeight.bold,
-      //         ),
-      //         button: TextStyle(
-      //           color: Colors.white,
-      //           fontWeight: FontWeight.bold,
-      //         ),
-      //       ),
-      //   floatingActionButtonTheme: FloatingActionButtonThemeData(
-      //     backgroundColor: Colors.purple[400],
-      //     foregroundColor: Colors.white,
-      //   ),
-      //   appBarTheme: AppBarTheme(
-      //     textTheme: ThemeData.light().textTheme.copyWith(
-      //           headline6: TextStyle(
-      //             fontFamily: 'OpenSans',
-      //             fontSize: 20 * MediaQuery.of(context).textScaleFactor,
-      //             fontWeight: FontWeight.bold,
-      //           ),
-      //         ),
-      //   ),
-      //   accentColor: Colors.yellow,
-      // ),
     );
   }
 }
@@ -87,50 +57,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> _transactions = [
-    Transaction(
-      id: 't0',
-      title: 'Lunch',
-      value: 67.80,
-      date: DateTime.now().subtract(Duration(days: 4)),
-    ),
-    Transaction(
-      id: 't1',
-      title: 'Running shoes',
-      value: 310.90,
-      date: DateTime.now().subtract(Duration(days: 1)),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Power bill',
-      value: 121.35,
-      date: DateTime.now().subtract(Duration(days: 3)),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'Make up',
-      value: 324.90,
-      date: DateTime.now().subtract(Duration(days: 2)),
-    ),
-    Transaction(
-      id: 't4',
-      title: 'Books',
-      value: 235.98,
-      date: DateTime.now().subtract(Duration(days: 6)),
-    ),
-    Transaction(
-      id: 't5',
-      title: 'Ice cream',
-      value: 35.17,
-      date: DateTime.now().subtract(Duration(days: 7)),
-    ),
-    Transaction(
-      id: 't6',
-      title: 'Books',
-      value: 800.00,
-      date: DateTime.now().subtract(Duration(days: 0)),
-    ),
-  ];
+  final List<Transaction> _transactions = [];
 
   List<Transaction> get _recentTransactions {
     return _transactions.where((transaction) {
