@@ -15,12 +15,16 @@ class TransactionList extends StatelessWidget {
             builder: (context, constraints) {
               return Column(
                 children: <Widget>[
-                  SizedBox(height: 20), // add some distance
+                  SizedBox(
+                      height:
+                          constraints.maxHeight * 0.05), // add some distance
                   Text(
                     'No transactions to show',
                     style: Theme.of(context).textTheme.headline6,
                   ),
-                  SizedBox(height: 20), // add some distance
+                  SizedBox(
+                      height:
+                          constraints.maxHeight * 0.05), // add some distance
                   Container(
                     height: constraints.maxHeight * 0.6,
                     child: Image.asset(
