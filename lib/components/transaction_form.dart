@@ -45,67 +45,79 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: <Widget>[
-            TextField(
-              controller: _titleController,
-              decoration: InputDecoration(
-                labelText: 'Title',
-              ),
-              onSubmitted: (_) => _submitForm(),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Card(
+          elevation: 5,
+          child: Padding(
+            padding: EdgeInsets.only(
+              bottom: 10 + MediaQuery.of(context).viewInsets.bottom,
+              left: 10,
+              right: 10,
+              top: 10,
             ),
-            TextField(
-              controller: _valueController,
-              decoration: InputDecoration(
-                labelText: 'Value (R\$)',
-              ),
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-              // ou (value) => _submitForm
-              // mas como não usa value, pode substituir por _
-              onSubmitted: (_) => _submitForm(),
-            ),
-            Container(
-              height: 70,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      _selectedDate == null
-                          ? 'No date was selected!'
-                          : 'Date selected: ${DateFormat('d/M/y').format(_selectedDate)}',
-                    ),
-                  ),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text(
-                      'Select date',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onPressed: _showDatePicker,
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            child: Column(
               children: <Widget>[
-                RaisedButton(
-                  color: Theme.of(context).primaryColor,
-                  textColor: Theme.of(context).textTheme.button.color,
-                  child: Text('New transaction'),
-                  onPressed: _submitForm,
+                TextField(
+                  controller: _titleController,
+                  decoration: InputDecoration(
+                    labelText: 'Title',
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                  onSubmitted: (_) => _submitForm(),
                 ),
+                TextField(
+                  controller: _valueController,
+                  decoration: InputDecoration(
+                    labelText: 'Value (R\$)',
+                  ),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  // ou (value) => _submitForm
+                  // mas como não usa value, pode substituir por _
+                  onSubmitted: (_) => _submitForm(),
+                ),
+                Container(
+                  height: 70,
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Text(
+                          _selectedDate == null
+                              ? 'No date was selected!'
+                              : 'Date selected: ${DateFormat('d/M/y').format(_selectedDate)}',
+                        ),
+                      ),
+                      FlatButton(
+                        textColor: Theme.of(context).primaryColor,
+                        child: Text(
+                          'Select date',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: _showDatePicker,
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    RaisedButton(
+                      color: Theme.of(context).primaryColor,
+                      textColor: Theme.of(context).textTheme.button.color,
+                      child: Text('New transaction'),
+                      onPressed: _submitForm,
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
