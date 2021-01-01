@@ -66,6 +66,9 @@ class _TransactionFormState extends State<TransactionForm> {
                     labelText: 'Title',
                   ),
                   keyboardType: TextInputType.emailAddress,
+                  autofocus: true,
+                  cursorColor: Theme.of(context).primaryColor,
+                  textCapitalization: TextCapitalization.sentences,
                   onSubmitted: (_) => _submitForm(),
                 ),
                 TextField(
