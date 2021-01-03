@@ -69,14 +69,14 @@ class _TransactionFormState extends State<TransactionForm> {
                   keyboard: TextInputType.emailAddress,
                   controller: _titleController,
                   autofocus: true,
-                  onSubmited: _submitForm,
+                  onSubmited: (_) => _submitForm(),
                 ),
                 AdaptiveTextField(
                   label: 'Value (R\$)',
                   keyboard: TextInputType.numberWithOptions(decimal: true),
                   controller: _valueController,
                   autofocus: false,
-                  onSubmited: _submitForm,
+                  onSubmited: (_) => _submitForm(),
                 ),
                 Container(
                   height: 70,

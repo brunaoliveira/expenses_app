@@ -7,7 +7,7 @@ class AdaptiveTextField extends StatelessWidget {
   final TextInputType keyboard;
   final TextEditingController controller;
   final bool autofocus;
-  final Function onSubmited;
+  final Function(String) onSubmited;
 
   AdaptiveTextField({
     this.label,
@@ -20,14 +20,23 @@ class AdaptiveTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Platform.isIOS
-        ? CupertinoTextField(
-            placeholder: label,
-            controller: controller,
-            keyboardType: keyboard,
-            autofocus: autofocus,
-            cursorColor: Theme.of(context).primaryColor,
-            textCapitalization: TextCapitalization.sentences,
-            onTap: onSubmited,
+        ? Padding(
+            padding: const EdgeInsets.only(
+              bottom: 10,
+            ),
+            child: CupertinoTextField(
+              padding: EdgeInsets.symmetric(
+                horizontal: 26,
+                vertical: 12,
+              ),
+              placeholder: label,
+              controller: controller,
+              keyboardType: keyboard,
+              autofocus: autofocus,
+              cursorColor: Theme.of(context).primaryColor,
+              textCapitalization: TextCapitalization.sentences,
+              onSubmitted: onSubmited,
+            ),
           )
         : TextField(
             controller: controller,
@@ -38,7 +47,7 @@ class AdaptiveTextField extends StatelessWidget {
             autofocus: autofocus,
             cursorColor: Theme.of(context).primaryColor,
             textCapitalization: TextCapitalization.sentences,
-            onSubmitted: (_) => onSubmited(),
+            onSubmitted: onSubmited,
           );
   }
 }
