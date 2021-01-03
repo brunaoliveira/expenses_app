@@ -1,6 +1,9 @@
-import 'package:expenses/components/adaptative_button.dart';
+import 'package:expenses/components/adaptive_button.dart';
+import 'package:expenses/components/adaptive_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import 'adaptive_button.dart';
 
 class TransactionForm extends StatefulWidget {
   final void Function(String, double, DateTime) onSubmit;
@@ -61,26 +64,19 @@ class _TransactionFormState extends State<TransactionForm> {
             ),
             child: Column(
               children: <Widget>[
-                TextField(
+                AdaptiveTextField(
+                  label: 'Title',
+                  keyboard: TextInputType.emailAddress,
                   controller: _titleController,
-                  decoration: InputDecoration(
-                    labelText: 'Title',
-                  ),
-                  keyboardType: TextInputType.emailAddress,
                   autofocus: true,
-                  cursorColor: Theme.of(context).primaryColor,
-                  textCapitalization: TextCapitalization.sentences,
-                  onSubmitted: (_) => _submitForm(),
+                  onSubmited: _submitForm,
                 ),
-                TextField(
+                AdaptiveTextField(
+                  label: 'Value (R\$)',
+                  keyboard: TextInputType.numberWithOptions(decimal: true),
                   controller: _valueController,
-                  decoration: InputDecoration(
-                    labelText: 'Value (R\$)',
-                  ),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  // ou (value) => _submitForm
-                  // mas como não usa value, pode substituir por _
-                  onSubmitted: (_) => _submitForm(),
+                  autofocus: false,
+                  onSubmited: _submitForm,
                 ),
                 Container(
                   height: 70,
@@ -109,7 +105,7 @@ class _TransactionFormState extends State<TransactionForm> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    AdaptativeButton(
+                    AdaptiveButton(
                       label: 'New transaction',
                       onPressed: _submitForm,
                     ),
