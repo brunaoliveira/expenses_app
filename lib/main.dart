@@ -4,10 +4,10 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:expenses/components/transaction_form.dart';
-import 'package:expenses/models/transaction.dart';
-import 'package:expenses/components/transaction_list.dart';
-import 'package:expenses/components/chart.dart';
+import './components/transaction_form.dart';
+import './components/transaction_list.dart';
+import './components/chart.dart';
+import './models/transaction.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -25,7 +25,6 @@ class ExpensesApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: [
-        // Locale('de', 'DE'),
         Locale('en', 'AU'),
       ],
       locale: Locale('en'),
