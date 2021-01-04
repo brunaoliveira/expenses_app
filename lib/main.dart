@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:expenses/components/transaction_form.dart';
 import 'package:expenses/models/transaction.dart';
 import 'package:expenses/components/transaction_list.dart';
@@ -19,6 +20,15 @@ class ExpensesApp extends StatelessWidget {
 
     return MaterialApp(
       home: MyHomePage(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        // Locale('de', 'DE'),
+        Locale('en', 'AU'),
+      ],
+      locale: Locale('en'),
       builder: (context, child) {
         return Theme(
           child: child,
