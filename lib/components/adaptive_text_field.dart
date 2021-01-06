@@ -21,11 +21,9 @@ class AdaptiveTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Platform.isIOS
         ? Padding(
-            padding: const EdgeInsets.only(
-              bottom: 10,
-            ),
+            padding: const EdgeInsets.only(bottom: 10),
             child: CupertinoTextField(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 26,
                 vertical: 12,
               ),

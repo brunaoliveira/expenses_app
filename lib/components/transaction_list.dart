@@ -15,9 +15,7 @@ class TransactionList extends StatelessWidget {
             builder: (context, constraints) {
               return Column(
                 children: <Widget>[
-                  SizedBox(
-                      height:
-                          constraints.maxHeight * 0.03), // add some distance
+                  SizedBox(height: constraints.maxHeight * 0.03),
                   Container(
                     height: constraints.maxHeight * 0.18,
                     child: Text(
@@ -25,9 +23,7 @@ class TransactionList extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
-                  SizedBox(
-                      height:
-                          constraints.maxHeight * 0.03), // add some distance
+                  SizedBox(height: constraints.maxHeight * 0.03),
                   Container(
                     height: constraints.maxHeight * 0.6,
                     child: Image.asset(
@@ -69,13 +65,13 @@ class TransactionList extends StatelessWidget {
                   ),
                   trailing: MediaQuery.of(context).size.width > 480
                       ? FlatButton.icon(
-                          icon: Icon(Icons.delete),
-                          label: Text('Delete'),
+                          icon: const Icon(Icons.delete),
+                          label: const Text('Delete'),
                           textColor: Colors.purple[200],
                           onPressed: () => onRemove(transaction.id),
                         )
                       : IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: const Icon(Icons.delete),
                           color: Colors.purple[100],
                           onPressed: () => onRemove(transaction.id),
                         ),
