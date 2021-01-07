@@ -190,7 +190,10 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
           if (!_showChart || !isLandscape)
             Container(
               height: availableHeight * (isLandscape ? 1 : 0.7),
-              child: TransactionList(_transactions, _removeTransaction),
+              child: TransactionList(
+                transactions: _transactions,
+                onRemove: _removeTransaction,
+              ),
             ),
         ],
       ),

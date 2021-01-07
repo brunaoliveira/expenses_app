@@ -6,7 +6,10 @@ class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final void Function(String) onRemove;
 
-  TransactionList(this.transactions, this.onRemove);
+  const TransactionList({
+    this.transactions,
+    this.onRemove,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +42,21 @@ class TransactionList extends StatelessWidget {
             itemCount: transactions.length,
             itemBuilder: (ctxt, index) {
               final transaction = transactions[index];
-              return TransactionItem(transaction: transaction);
+              return TransactionItem(
+                key: GlobalObjectKey(transaction),
+                transaction: transaction,
+                onRemove: onRemove,
+              );
             },
           );
+    // : ListView(
+    //     children: transactions.map((transaction) {
+    //       return TransactionItem(
+    //         key: ValueKey(transaction.id),
+    //         transaction: transaction,
+    //         onRemove: onRemove,
+    //       );
+    //     }).toList(),
+    //   );
   }
 }
