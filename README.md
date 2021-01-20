@@ -1,9 +1,8 @@
 # Expenses App
 
-A Flutter pet project that consists in a mobile app to keep track of daily expenses.
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=brunaoliveira&repo=expenses_app&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+
 Despite Flutter's availability of full native performance on both iOS and Android, this project was not tested on iOS device or emulator.
-
-
 
 
 
